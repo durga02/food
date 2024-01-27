@@ -1,0 +1,526 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Food Food Site</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #first{
+            width: 100%;
+            height: 100px;
+            background-color: brown;
+        }
+        .firsttext{
+            padding-left: 40px;
+            font-size: 25px;
+            color: aliceblue;
+        }
+        #food{
+            padding-top: 25px;
+        }
+        /* for Home */
+        .nav{
+            width: 100%;
+            height: 95px;
+            background-color: gray;
+        }
+        .nav ul{
+            display: inline-flex;
+        }
+        .nav ul li{
+            list-style: none;
+            padding: 30px;
+            font-size: 20px;
+        }
+        .navitems:hover{
+            color: orange;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        /* CHEFS */
+        .navsub2{
+            display: none
+        } 
+        .nav ul li:hover .navsub2{
+            display: block;
+            background-color: coral;
+            position: absolute;
+        }
+        .nav ul li:hover .navsub2 ul{
+            display: block;
+        }
+        .chefs:hover{
+            background-color:darkcyan;
+            color: white;
+        }
+       /* for Shows  */
+        .navsub3{
+            display:none;
+            margin-left: -60px;
+            width: 200px;
+        }
+        .nav ul li:hover  .navsub3{
+            background-color: coral;
+            display: block;
+            position: absolute;
+        }
+        .nav ul li:hover .navsub3 ul{
+            display: block;
+        }
+        .shows:hover{
+            background-color: darkcyan;
+            color: white;
+        }
+        /* for RECIPES */
+        .navsub4{
+            display: none;
+        }
+        .nav ul li:hover .navsub4{
+            display: block;
+            position: absolute;
+            background-color: coral;
+        }
+        .nav ul li:hover .navsub4 ul{
+            display: block;
+        }
+        .recipes:hover{
+            background-color: darkcyan;
+            color: white;
+        }
+        /* for VIDEOS */
+        .navsub5{
+            display: none;
+            margin-left: -60px;
+        }
+        .navsub5 ul{
+            background-color: coral;
+            display: block;
+            position: absolute;
+        }
+        .nav ul li:hover .navsub5{
+            display: block;
+        }
+        .videolist:hover{
+            background-color: darkcyan;
+            color: white;
+        }
+        /* for FOOD JOURNAL */
+        .navsub6{
+            display: none;
+        }
+        .navsub6 ul{
+            display: block;
+            background-color: coral;
+            position: absolute;
+        }
+        .nav ul li:hover .navsub6{
+            display: block;
+        }
+        .foodlist:hover{
+            background-color: darkcyan;
+            color: white;
+        }
+        /* navagition over */
+        #imgspace{
+            width: 100%;
+            height: 450px;
+            /* border: 1px blueviolet solid; */
+            /* background-color: brown; */
+            background-image: url(food.jpeg);
+            background-size:cover;
+        }
+        input{
+            height: 35px;
+            width: 350px;
+            margin-top: 200px;
+            margin-left: 600px;
+            border-radius: 10px;
+            padding: 10px;
+            background: transparent;
+            outline: 0px;
+            font-size: 20px;
+        }
+        input::placeholder{
+            color:black;
+            font-weight: 20px;
+            background-color:rgba(169,169,169, 0.6);
+            border-radius: 10px;
+        }
+        /* last sections */
+        .last{
+            width: 100%;
+            height: 150px;
+            background-color:chartreuse;
+        }
+        .selection{
+            width: 366px;
+            height: 100%;
+            float: left;
+        }
+        #one{
+            background-color: crimson;
+            
+        }
+        #two{
+            background-color: darkorchid;
+        }
+        #three{
+            background-color: lightseagreen;
+        }
+        #four{
+            background-color: cornflowerblue;
+        }
+        .icon{
+            height: 80px;
+            width: 80px;
+            padding-top: 20px;
+            margin-left: 115px;
+        }
+        .selection:hover img{
+            transform: translateY(-8px);
+            transition: all 1s;
+        }
+        /* for the Images */
+        .imgsec{
+            width: 100%;
+            height: 600px;
+            /* border: 2px solid black; */
+            /* float: left; */
+        }
+        .imgset{
+            width: 485px;
+            height: 300px;
+            border: 1px solid red;
+            float: left;
+        }
+        .imgsec div{
+            background-color: coral;
+        }
+        .imgsec .imgset img{
+            width: 250px;
+            height: 200px;
+            margin-top: 40px;
+            margin-left: 130px;
+        }
+        .imgframe{
+            width: 400px;
+            height: 250px;
+            background-color: cornflowerblue;
+            float: left;
+        }
+        /* Food Images */
+        #container{
+            height: 600px;
+            width: 100%;
+            /* background-color: aquamarine; */
+            /* position: absolute; */
+        }
+        .sec{
+            height: 290px;
+            width: 470px;
+            float: left;
+            margin: 5px;
+            /* position: relative; */
+            border-radius: 15px;
+
+        }
+        /* #d1{
+            background-color: blueviolet;
+        }
+        #d2{
+            background-color:brown;
+        }
+        #d3{
+            background-color:blue;
+        }
+        #d4{
+            background-color:burlywood;
+        }
+        #d5{
+            background-color:chocolate;
+        }
+        #d6{
+            background-color: blueviolet;
+        } */
+        .imgdiv{
+            height: 250px;
+            width: 250px;
+            background-color:darkolivegreen;
+            margin-top: 25px;
+            margin-left: 100px;
+            /* position: relative; */
+            border-radius: 25px;
+        }
+        img{
+            height: 200px;
+            width: 250px;
+            border-radius: 18px;
+            border-end-end-radius: 0px;
+            border-end-start-radius: 0px;
+        }
+        h2{
+            text-align: center;
+            padding-top: 5px;
+        }
+        .imgdiv:hover{
+            /* transform: scaleZ(280px); */
+            background-color: chocolate;
+            width:260px;
+            height: 260px;
+        }
+        .imgdiv:hover img{
+            height: 210px;
+            width: 260px;
+        }
+        #one img{
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-top: 8px;
+            margin-left: 150px;
+        }
+        /* country receipes */
+        #country{
+            width: 100%;
+            height: 550px;
+            background-color: darkseagreen;
+            display:flex;
+            justify-content:space-around;
+            align-items: center;
+            padding-bottom: -20px;
+        }
+        .receipe{
+            height: 230px;
+            width: 300px;
+            background-color: burlywood;
+            border: 2px solid; 
+            position: relative;
+        }
+        .foodtype{
+            border-radius: 10px;
+            transform: translateY(-60px)translateX(25px);
+            box-shadow: 2px 2px 2px black;
+        }
+        .receipe:hover{
+            height: 400px;
+            background-color: white;
+            border-top-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        .head{
+            position: absolute;
+            margin-left: 60px;
+            margin-top: -35px;
+            font-weight: lighter;
+        }
+        .receipe:hover .head{
+            font-weight: bolder;
+        }
+        .content{
+            text-align: justify;
+            font-family: 'Times New Roman', Times, serif;
+            transform: translateY(-200px);
+            opacity: 0;
+        }
+        .receipe:hover .content{
+            opacity: 1;
+            font-style:oblique;
+            transform: translateY(-5px);
+            font-weight:550;
+        }
+    </style>
+</head>
+<body>
+    <div id="first">
+        <h5 class="firsttext" id="food">Food</h5>
+        <h5 class="firsttext">Food</h5>
+    </div>
+    <div class="nav">
+        <ul>
+            <li class="main"><a href="#" class="navitems">HOME</a></li>
+            <li class="main"><a href="#" class="navitems">CHEFS</a>
+                <div class="navsub2">
+                    <ul>
+                        <li class="chefs">MASTERCHEF SANJEEV KAPOOR </li>
+                        <li class="chefs">CHEF GUPTA</li>
+                        <li class="chefs">CHEF ANUPA DAS</li>
+                        <li class="chefs">CHEF AJAY CHOPRA</li>
+                        <li class="chefs">CHEF MADHU SNEHA</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="main"><a href="#" class="navitems">SHOWS</a>
+                <div class="navsub3">
+                    <ul>
+                        <li class="shows">SANJEEV KAPOOR'S KITCHEN</li>
+                        <li class="shows">COOK SMART</li>
+                        <li class="shows">TEA TIME</li>
+                        <li class="shows">STYLE CHEF</li>
+                        <li class="shows">FOOD THIS WEEK</li>
+                        <li class="shows">FLAB Q</li>
+                        <li class="shows">HI TEA</li>
+                        <li class="shows">THE FIT FOODIE</li>
+                        <li class="shows">INDIA UNLIMITED</li>
+                        <li class="shows">DAAL DHAMAL</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="main"><a href="#" class="navitems">RECIPES</a>
+                <div class="navsub4">
+                    <ul>
+                        <li class="recipes">COURSE</li>
+                        <li class="recipes">CUISINE</li>
+                        <li class="recipes">OCCASTION</li>
+                        <li class="recipes">SHOW</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="main"><a href="#" class="navitems">VIDEOS</a>
+                <div class="navsub5">
+                    <ul>
+                        <li class="videolist">COURSE</li>
+                        <li class="videolist">CUISINE</li>
+                        <li class="videolist">OCCASION</li>
+                        <li class="videolist">INGREDIENTS</li>
+                        <li class="videolist">MEAL TYPE</li>
+                        <li class="videolist">DIET</li>
+                        <li class="videolist">SHOW</li>
+                        <li class="videolist">SEASON</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="main"><a href="#" class="navitems">FOOD JOURNAL</a>
+                <div class="navsub6">
+                    <ul>
+                        <li class="foodlist">ARTICLES</li>
+                        <li class="foodlist">HEALTH TIPS</li>
+                        <li class="foodlist">FAQ</li>
+                        <li class="foodlist">FUN FOOD FACTS</li>
+                        <li class="foodlist">FOOD GLOSSARY</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="main"><a href="#" class="navitems">BLOG</a></li>
+            <li class="main"><a href="#" class="navitems">ABOUT US</a></li>
+            <li class="main"><a href="#" class="navitems">CONTACT US</a></li>
+            <li class="main"><a href="#" class="navitems">SIGN IN</a></li>
+        </ul>
+    </div>
+    <div id="imgspace">
+        <input type="search" placeholder="search">
+    </div>
+    <div class="last">
+        <div class="selection" id="one">
+            <img src="cuisine.png" class="icon">
+        </div>
+        <div class="selection" id="two">
+            <img src="ingredience.png" class="icon">
+        </div>
+        <div class="selection" id="three">
+            <img src="meal-&-course.png" class="icon">
+        </div>
+        <div class="selection" id="four">
+            <img src="ingredience.png" class="icon">
+        </div>
+    </div>
+    <!-- <div class="imgsec">
+        <div class="imgset">
+           <div class="imgframe"> <img src="food1.jpeg"></div>
+        </div>
+        <div class="imgset">
+            <div class="imgframe"> <img src="food2.jpeg"></div>
+        </div>
+        <div class="imgset">
+            <div class="imgframe">  <img src="food3.jpeg"></div>
+        </div>
+        <div class="imgset">
+            <div class="imgframe"> <img src="food4.jpeg"></div>
+        </div>
+        <div class="imgset">
+            <div class="imgframe"><img src="food5.jpeg"></div>
+        </div>
+        <div class="imgset">
+            <div class="imgframe">  <img src="food6.jpeg"></div>
+        </div>
+    </div> -->
+    <div id="container">
+        <div class="sec" id="d1">
+            <div class="imgdiv">
+                <img src="food1.jpeg">
+                <div class="text"><h2>Sweet</h2></div>
+                <p></p>
+            </div>
+        </div>
+        <div class="sec" id="d2">
+            <div class="imgdiv">
+                <img src="food2.jpeg">
+                <div class="text"><h2>Chicken</h2></div>
+            </div>
+        </div>
+        <div class="sec" id="d3">
+            <div class="imgdiv">
+                <img src="food3.jpeg" >
+                <div class="text"><h2>Appetizer Skewers</h2></div>
+            </div>
+        </div>
+        <div class="sec" id="d4">
+            <div class="imgdiv">
+                <img src="food4.jpeg">
+                <div class="text"><h2>Raw Vegan</h2></div>
+            </div>
+        </div>
+        <div class="sec" id="d5">
+            <div class="imgdiv">
+                <img src="food5.jpeg">
+                <div class="text"><h2>Corn Fritters</h2></div>
+            </div>
+        </div>
+        <div class="sec" id="d6">
+            <div class="imgdiv">
+                <img src="food6.jpeg">
+                <div class="text"><h2>Desserts</h2></div>
+            </div>
+        </div>
+    </div>
+    <div id="country">
+        <div class="receipe">
+            <img src="indian.jpg"  class="foodtype" alt="">
+            <h3 class="head">INDIAN CUISINE</h3>
+            <p class="content">Indian cuisine consists of a variety of regional and traditional cuisines native to India. Given the diversity in soil, climate, culture, ethnic groups, and occupations, these cuisines vary substantially and use locally available spices, herbs, vegetables, and fruits.
+               Indian food is also heavily influenced by religion, in particular Hinduism and Islam, cultural choices and traditions.</p>
+        </div>
+        <div class="receipe">
+            <img src="italian.jpg" class="foodtype"  alt="">
+            <h3 class="head">ITALIAN CUISINE</h3>
+            <p class="content">Italian cuisine includes deeply rooted traditions common to the whole country, as well as all the regional gastronomies, different from each other, especially between the north, the centre and the south of Italy, which are in continuous exchange. Italian cuisine offers an abundance of taste, and is one of the most popular and copied around the world. The cuisine has influenced several other cuisines around the world, chiefly that of the United States.</p>
+        </div>
+        <div class="receipe">
+            <img src="Turkish.jpg" class="foodtype"  alt="">
+            <h3 class="head">TURKISH CUISINE</h3>
+            <p class="content">Turkish cuisine varies across the country. The cooking of Istanbul, Bursa, Izmir, and rest of the Anatolia region inherits many elements of Ottoman court cuisine, including moderate use of spices, a preference for rice over bulgur, koftes, and a wider availability of vegetable stews (türlü), eggplant, stuffed dolmas and fish. The cuisine of the Black Sea Region uses fish extensively, especially the Black Sea anchovy (hamsi) and includes maize dishes.</p>
+        </div>
+        <div class="receipe">
+            <img src="mexican.jpg" class="foodtype"  alt="">
+            <h3 class="head">MEXICAN CUISINE</h3>
+            <p class="content">Mexican cuisine consists of the cooking cuisines and traditions of the modern country of Mexico. Its earliest roots lie in Mesoamerican cuisine. Its ingredients and methods begin with the first agricultural communities such as the Olmec and Maya who domesticated maize, created the standard process of nixtamalization, and established their foodways. Successive waves of other Mesoamerican groups brought with them their own cooking methods.</p>
+        </div>
+    </div>
+    <div class="scrolllist">
+
+    </div>
+    <script>
+      var  slideIndex=0;
+
+      function movingBanner()
+      {
+        let i;
+        slide = document.getElementsByClassName()
+      }
+
+    </script>
+</body>
+</html>
